@@ -1,0 +1,19 @@
+---
+title: "class-2019-09-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+library(readr)
+library(tidyverse)
+read_xlsx("class_enrollment_summary_by_term_9.16.19.xlsx", skip = 3)
+```
+
+```{r}
+x <- read_excel("class_enrollment_summary_by_term_9.16.19.xlsx", skip=3)
+glimpse(x)
+largest_english <- x %>% 
+    filter('Course Department' == "English")
+```
